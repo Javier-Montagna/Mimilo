@@ -410,7 +410,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ProductService = (function () {
     function ProductService(_http) {
         this._http = _http;
-        this._productUrl = "http://localhost:5000/api/Product/";
+        this._productUrl = "http://mimilowebapi.azurewebsites.net/api/Product/";
     }
     ProductService.prototype.getProducts = function () {
         return this._http.get(this._productUrl + 'GetProducts')

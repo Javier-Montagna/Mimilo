@@ -10,7 +10,7 @@ import "rxjs/add/operator/map";
 
 @Injectable()
 export class ProductService {
-    private _productUrl: string = "http://localhost:5000/api/Product/";
+    private _productUrl: string = "http://mimilowebapi.azurewebsites.net/api/Product/";
 
     constructor(private _http: Http) {
     }
