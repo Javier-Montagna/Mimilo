@@ -8,19 +8,18 @@ import { ProductListComponent } from "./product-list/product-list.component";
 
 // user define services
 import { ProductService } from "./product.service";
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { MaterializeModule } from "angular2-materialize";
 
 @NgModule({
     declarations: [
-        ProductListComponent,
-        ProductDetailComponent
+        ProductListComponent
     ],
     imports: [
         BrowserModule,
         RouterModule.forChild([
-            { path: "products", component: ProductListComponent },
-            { path: "product/:Id", component: ProductDetailComponent }
-        ])
+            { path: "products", component: ProductListComponent }
+        ]),
+        MaterializeModule
     ],
     providers: [
         ProductService

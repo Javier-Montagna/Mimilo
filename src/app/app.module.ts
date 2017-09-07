@@ -6,7 +6,7 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 
 /* External JS Imports */
-import { MaterializeModule } from 'angular2-materialize';
+import { MaterializeModule } from "angular2-materialize";
 import { HomeComponent } from './home/home.component';
 
 /* Module imports */
@@ -19,13 +19,13 @@ import { ProductModule } from './products/product.module';
   ],
   imports: [
     BrowserModule,
-    MaterializeModule,
     HttpModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "", redirectTo: "home", pathMatch: "full" }
     ]),
-    ProductModule
+    ProductModule,
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

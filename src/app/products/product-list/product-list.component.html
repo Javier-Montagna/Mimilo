@@ -19,7 +19,8 @@
             <span class="card-title activator grey-text text-darken-4">{{product.titleDescription}}<i class="material-icons right">more_vert</i></span>
             <p>{{product.shortDescription}}</p>
             <p>ARS ${{product.price}}</p>
-            <a [routerLink]="['/product, product.productId]']">Ver Detalles</a>
+            <!-- <a [routerLink]="['/product', product.productId]">Ver Detalles</a> -->
+            <a class="modal-trigger" (click)="OpenProductDetail(product.productId)" href="#modal1">Ver Detalles</a>
           </div>
           <div class="card-action">
             <a href="#">Agregar favoritos</a>
@@ -30,5 +31,118 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" materialize="modal" class="modal">
+    <div class="modal-content">
+      <h4 class="center">Detalles</h4>
+      <div *ngIf="_product">
+        <div class="row">
+          <hr>
+          <!--Primera columna-->
+          <div class="col m3">
+            <h4>Galeria</h4>
+            <hr>
+            <!-- <img src="https://mdbootstrap.com/images/ecommerce/vertical/img%20(13).jpg" alt="First slide" class="responsive-img"> -->
+            <img src="{{_product.coverImageUrl}}" alt="First slide" class="responsive-img">
+          </div>
+          <!--Primera columna-->
+          <!--Segunda columna-->
+          <div class="product-panel col m4">
+            <h4>{{_product.productName}}</h4>
+            <hr>
+            <div class="price">
+              <p><span class="price-after">$500</span> <span class="price-before">$700</span></p>
+              <span class="label">-20%</span>
+            </div>
+            <button class="btn btn-default waves-effect waves-light">Comprar ahora</button>
+            <a class="btn-floating wishlist waves-effect waves-light tooltipped favorite">
+                <i class="large material-icons">favorite</i>
+            </a>
+            <hr>
+            <h4>Descripcion</h4>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit est, ex nulla voluptates eaque aperiam repudiandae
+              consectetur quae quod.</p>
+            <br>
+            <!--Social buttons-->
+            <p class="center">Compartilo con tus amigos!</p>
+            <div class="center">
+              <a class="btn-floating btn-small btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>
+              <a class="btn-floating btn-small btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>
+              <a class="btn-floating btn-small btn-li waves-effect waves-light"><i class="fa fa-linkedin"></i></a>
+              <a class="btn-floating btn-small btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+              <a class="btn-floating btn-small btn-snap waves-effect waves-light"><i class="fa fa-snapchat-ghost"></i></a>
+            </div>
+          </div>
+          <!--Segunda columna-->
+          <!--Tercera columna-->
+          <div class="col m5">
+            <h4>Opiniones</h4>
+            <hr>
+            <!--First review-->
+            <div class="media">
+              <a class="media-left waves-light waves-effect waves-light">
+                    <img class="img-circle" src="https://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-1.jpg" alt="Generic placeholder image">
+                </a>
+              <div class="media-body">
+                <h4 class="media-heading">Nathan Casie</h4>
+                <ul class="rating inline-ul">
+                  <li><i class="fa fa-star amber-text"></i></li>
+                  <li><i class="fa fa-star amber-text"></i></li>
+                  <li><i class="fa fa-star amber-text"></i></li>
+                  <li><i class="fa fa-star amber-text"></i></li>
+                  <li><i class="fa fa-star amber-text"></i></li>
+                </ul>
+                <p class="  ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia
+                  maxime nemo quam accusamus possimus.</p>
+              </div>
+            </div>
+            <!--Second review-->
+            <div class="media">
+                <a class="media-left waves-light waves-effect waves-light">
+                    <img class="img-circle" src="https://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-2.jpg" alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Nathan Casie</h4>
+                    <ul class="rating inline-ul">
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus.</p>
+                </div>
+            </div>
+
+            <!--Third review-->
+            <div class="media">
+                <a class="media-left waves-light waves-effect waves-light">
+                    <img class="img-circle" src="https://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Dave Snow</h4>
+                    <ul class="rating inline-ul">
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star amber-text"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+                </div>
+            </div>
+          </div>
+          <!--Tercera columna-->
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-green btn-flat" (click)="closeModal()">Close</a>
+      <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>

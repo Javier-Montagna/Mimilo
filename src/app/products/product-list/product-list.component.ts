@@ -9,6 +9,7 @@ import { IProduct } from "../product";
 })
 export class ProductListComponent implements OnInit {
 
+  _product: IProduct
   _products: IProduct[];
   _errorMessage: string
   _isValid: boolean = false;
@@ -21,5 +22,13 @@ export class ProductListComponent implements OnInit {
         this._isValid = true;
       },
       error => this._errorMessage = <any>error);
+  }
+
+  OpenProductDetail(productId: string) {
+    this._productService.getProductById(productId)
+    .subscribe(product => {
+      this._product = product;
+    },
+    error => this._errorMessage = <any>error);
   }
 }

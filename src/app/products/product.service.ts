@@ -11,7 +11,8 @@ import "rxjs/add/operator/map";
 @Injectable()
 export class ProductService {
     private _productUrl: string = "http://mimilowebapi.azurewebsites.net/api/Product/";
-
+    //private _productUrl: string = "http://localhost:5000/api/product/";
+    
     constructor(private _http: Http) {
     }
 
@@ -22,9 +23,9 @@ export class ProductService {
             .catch(this.errorHandler);
     }
 
-    getProductById(Id: string): Observable<IProduct[]> {
-        return this._http.get(this._productUrl + "/" + Id)
-            .map((response: Response) => <IProduct[]>response.json())
+    getProductById(Id: string): Observable<IProduct> {
+        return this._http.get(this._productUrl + "GetProductById?Id=" + Id)
+            .map((response: Response) => <IProduct>response.json())
             .do(data => console.log("Product: " + JSON.stringify(data)))
             .catch(this.errorHandler);
     }

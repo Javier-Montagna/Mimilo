@@ -3,6 +3,11 @@
   overflow: visible;
 }
 
+.modal{
+  max-height: 90%;
+  width: 95%;
+}
+
 @media only screen and (max-width: 600px) {
   .cards-container {
     -webkit-column-count: 1;
@@ -28,7 +33,6 @@
   text-align: center;
 }
 
-
 .wrap {
   max-width: 1000px;
   margin: 0 auto;
@@ -53,4 +57,177 @@
 
 body {
   background: #333;
+}
+
+
+/* Price */
+.product-panel .price p .price-after,
+.ql-modal .price p .price-after {
+  font-size: 1.7rem;
+  color: green
+}
+
+.product-panel .price p,
+.ql-modal .price p {
+    display: inline-block;
+    font-size: 1.3rem
+}
+
+.product-panel .price p .price-before {
+    color: #000;
+    text-decoration: line-through;
+    margin-left: .5rem
+}
+
+hr {
+  margin-top: 1rem;
+  border: 0;
+  border-top: 1px solid rgb(229, 229, 229);
+}
+
+.btn-default {
+  background: #263238!important;
+}
+
+.btn {
+  border-radius: 2px;
+  border: 0;
+  color: #fff!important;
+  margin: 6px;
+  white-space: normal!important;
+}
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1;
+ }
+
+.favorite {
+  background-color: red;
+  margin-right: 20px;
+}
+
+.btn-fb {
+  background-color: #3B5998;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-tw {
+  background-color: #55ACEE;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-gplus {
+  background-color: #DD4B39;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-li {
+  background-color: #0082CA;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-snap {
+  background-color: #C3CA00;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.media img, .ql-modal .media img {
+  max-width: 60px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.btn-amber.active,
+.btn-blue-grey.active,
+.btn-brown.active,
+.btn-cyan.active,
+.btn-danger.active,
+.btn-dark-green.active,
+.btn-deep-orange.active,
+.btn-deep-purple.active,
+.btn-default.active,
+.btn-elegant.active,
+.btn-floating.btn-flat.active,
+.btn-floating:hover,
+.btn-indigo.active,
+.btn-info.active,
+.btn-light-green.active,
+.btn-lime.active,
+.btn-mdb.active,
+.btn-orange.active,
+.btn-pink.active,
+.btn-primary.active,
+.btn-purple.active,
+.btn-secondary.active,
+.btn-secondary.dropdown-toggle,
+.btn-success.active,
+.btn-unique.active,
+.btn-warning.active,
+.btn-yellow.active,
+.btn:hover,
+.card .form-header,
+.colorful-select .dropdown-content li.active span,
+.comments-list .tag,
+.inline-ul-img li img,
+.md-pills .nav-item .nav-link.active,
+.media img,
+.modal-bf .modal-dialog,
+.pager li a:hover,
+.picker--focused .picker__day--selected,
+.picker__day--selected,
+.picker__day--selected:hover,
+.pricing-card .header,
+.reply-form .tag,
+.tooltip .tooltip-inner,
+.z-depth-1-half {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15)
+}
+
+.card .rating>li,
+.inline-ul>li {
+    display: inline
+}
+
+.media-body, .media-left, .media-right {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.h4, h4 {
+  font-size: 1.5rem;
+}
+
+.media-left {
+  padding-right: 10px;
+}
+
+.divider-new, .text-fluid, h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.rating {
+  margin: 0;
+}
+
+html {
+  font-size: 1em;
 }
