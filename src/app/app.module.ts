@@ -11,21 +11,26 @@ import { HomeComponent } from './home/home.component';
 
 /* Module imports */
 import { ProductModule } from './products/product.module';
+import { LoginComponent } from './login/login.component';
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     HttpModule,
+    MaterializeModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
+      { path: "login", component: LoginComponent },
       { path: "", redirectTo: "home", pathMatch: "full" }
     ]),
-    ProductModule,
-    MaterializeModule
+    ProductModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
