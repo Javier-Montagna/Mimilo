@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CenterDirective } from "../directives/center.directive";
 
 @NgModule({
@@ -12,7 +12,9 @@ import { CenterDirective } from "../directives/center.directive";
   ],
   exports: [
     CenterDirective,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

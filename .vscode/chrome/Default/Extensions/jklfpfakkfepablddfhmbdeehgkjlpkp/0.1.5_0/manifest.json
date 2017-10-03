@@ -1,0 +1,26 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "images/icon-19.png",
+         "38": "images/icon-38.png"
+      },
+      "default_title": "Disable Accenture SignOn"
+   },
+   "description": "Enables Sign On for Accenture Managed Devices.",
+   "homepage_url": "https://support.accenture.com/technology/MyComputer/Pages/AccentureSingleSignOnChromeBrowserExtension.aspx?rd=1&Country=60",
+   "icons": {
+      "128": "images/icon-128.png",
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6uPfshJ9sBEq8ZaRyQ2gut4S3ISPVxOQb4C35AcfXH1+Euo4CZuso31P7cha8+FBJJ+2mP3Wv/f/RX8WU9osBJOw/nLpzfVh7BAM/KLAqdSsjxo5kMnTdpeGBvcbBp3AMc9x30IW6scEpfdvgzfT7Itx/8NtiqowiNdC3KIhrMwbw6jkhpsF/bBcbX4KxQgUSW3u0zIYjltH2zzTHa47OSwdI2WqqILLxnnZ6M7YuHOUTOvwOGkLr4+I0cTTUpft/VfwkzMRz278oASuYaQOGIzpeUOgBsMBlKarMUcrCA7Ftle8mOv4PkB3uU8c66xcaZ8aWJ8ZIws+3NZSeNWaGQIDAQAB",
+   "manifest_version": 2,
+   "name": "Accenture SignOn",
+   "permissions": [ "webRequest", "webRequestBlocking", "*://*.accenture.com/*", "storage" ],
+   "update_url": "https://federation-sts.accenture.com/static/libs/extensions/sso/chromeupdate.xml",
+   "version": "0.1.5"
+}

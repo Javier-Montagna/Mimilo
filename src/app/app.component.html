@@ -5,13 +5,14 @@
       <a materialize="sideNav" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a [routerLink]="['/products']">Productos</a></li>
-        <li><a href="#contactSheet">Contacto</a></li>
+        <li><a class="modal-trigger" href="#contactSheet">Contacto</a></li>
         <li><a [routerLink]="['/products']">Quienes somos</a></li>
-        <li><a [routerLink]="['/login']">Ingresar</a></li>
+        <!-- <li><a [routerLink]="['/login']">Ingresar</a></li> -->
+        <li><a class="modal-trigger" href="#logInRegister">Ingresar</a></li>
       </ul>
       <ul class="side-nav side-nav-fixed" id="mobile-demo">
         <li><a [routerLink]="['/products']">Productos</a></li>
-        <li><a href="/products/#contactSheet">Contacto</a></li>
+        <li><a class="modal-trigger" href="#contactSheet">Contacto</a></li>
         <li><a [routerLink]="['/products']">Quienes somos</a></li>
         <li><a [routerLink]="['/login']">Ingresar</a></li>
       </ul>
@@ -23,7 +24,7 @@
   <router-outlet></router-outlet>
 </div>
 
-<!-- Modal -->
+<!-- Contact Sheet Modal -->
 <div id="contactSheet" materialize="modal" class="modal">
   <div class="row">
     <form class="col s12">
@@ -49,6 +50,103 @@
   <div class="modal-footer">
     <a class="modal-action modal-close waves-effect waves-green btn-flat">Enviar</a>
     <a class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+  </div>
+</div>
+
+<!-- Log In & Register Modal -->
+<div id="logInRegister" materialize="modal" class="modal login">
+  <ul class="tabs teal">
+    <li class="tab col s3"><a class="white-text active" href="#login">Ingresar</a></li>
+    <li class="tab col s3"><a class="white-text" href="#register">Resgistro</a></li>
+  </ul>
+  <div id="login" class="col s12">
+    <form [formGroup]="loginForm" novalidate id="signin" (ngSubmit)="LogIn(loginForm.value)" role="form" class="col s12">
+      <div class="form-container">
+        <h3 class="teal-text">Ingresar</h3>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" [formControl]="loginForm.controls['email']">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" [formControl]="loginForm.controls['password']">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+        <label for="filled-in-box">Recordarme</label>
+        <br>
+        <center>
+          <button type="submit" class="btn waves-effect waves-light teal">Ingresar</button>
+          <br>
+          <br>
+          <a href="">¿Olvido contraseña?</a>
+        </center>
+      </div>
+    </form>
+
+    <div *ngIf="formSubmitted && !loginForm.valid" class="row">
+      <div class="col s12 m10 l10 offset-m1 offset-l1">
+        <div *ngIf="!loginForm.controls['password'].valid" class="chip red" style="padding: 10px 10px 10px 10px; width: 100%; height: 50px;">
+          <i class=" close material-icons right white-text">close</i>
+          <i class="material-icons white-text left" style="padding-top: 2px;">error</i>
+          <h6 class="white-text"><b>ERROR!</b> Contraseña invalida.</h6>
+        </div>
+
+        <div *ngIf="!loginForm.controls['email'].valid" class="chip red" style="padding: 10px 10px 10px 10px; width: 100%; height: 50px;">
+          <i class=" close material-icons right white-text">close</i>
+          <i class="material-icons white-text left" style="padding-top: 2px;">error</i>
+          <h6 class="white-text"><b>ERROR!</b> Direccion de mail no valida.</h6>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  <div id="register" class="col s12">
+    <form class="col s12">
+      <div class="form-container">
+        <h3 class="teal-text">Bienvenido</h3>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Primer nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Apellido</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email-confirm" type="email" class="validate">
+            <label for="email-confirm">Confirmacion Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate">
+            <label for="password">Contraseña</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password-confirm" type="password" class="validate">
+            <label for="password-confirm">Confirmacion Contraseña</label>
+          </div>
+        </div>
+        <center>
+          <button class="btn waves-effect waves-light teal">Enviar</button>
+        </center>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -87,7 +185,6 @@
               <img src="/assets/img/footer/twitter.png">
             </a>
           </li>
-
         </ul>
       </div>
     </div>
