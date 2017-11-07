@@ -55,8 +55,8 @@
             <h4>{{_product.productName}}</h4>
             <hr>
             <div class="price">
-              <p><span class="price-after">$500</span> <span class="price-before">$700</span></p>
-              <span class="label">-20%</span>
+              <p><span class="price-after">${{_product.price}}</span> <span class="price-before">${{_product.price * 1.1 | number : '1.2-2'}}</span></p>
+              <span class="label">-10%</span>
             </div>
             <button class="btn btn-default waves-effect waves-light">Comprar ahora</button>
             <a class="btn-floating wishlist waves-effect waves-light tooltipped favorite">
@@ -65,8 +65,7 @@
             <hr>
             <h4>Descripcion</h4>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit est, ex nulla voluptates eaque aperiam repudiandae
-              consectetur quae quod.</p>
+            <p>{{_product.longDescription}}.</p>
             <br>
             <!--Social buttons-->
             <p class="center">Compartilo con tus amigos!</p>

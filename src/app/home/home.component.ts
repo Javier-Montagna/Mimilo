@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  isUserLogged: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+    this.isUserLogged = localStorage.getItem("currentUser") != "";
   }
 
 }
