@@ -1,8 +1,8 @@
 <nav class="navbar-fixed ">
   <ul *ngIf="isUserLogged" id="mobileDropDownMenu" class="dropdown-content">
     <li>
-      <a href="#!">Ver Carrito
-        <span class="new badge blue" data-badge-caption="">4</span>
+      <a [routerLink]="['/shopping-cart']">Ver Carrito
+        <span class="new badge blue" data-badge-caption="">{{user.shoppingCart.lineItems.length}}</span>
       </a>
     </li>
     <li>
@@ -15,8 +15,8 @@
   </ul>
   <ul *ngIf="isUserLogged" id="desktopDropDownMenu" class="dropdown-content">
     <li>
-      <a href="#!">Ver Carrito
-        <span class="new badge blue" data-badge-caption="">4</span>
+      <a [routerLink]="['/shopping-cart']">Ver Carrito
+        <span class="new badge blue" data-badge-caption="">{{user.shoppingCart.lineItems.length}}</span>
       </a>
     </li>
     <li>

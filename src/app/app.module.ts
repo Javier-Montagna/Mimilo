@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductModule } from './products/product.module';
 import { SharedModule } from "./shared/shared.module";
 import { UserModule } from "./users/user.module";
+import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserModule } from "./users/user.module";
       { path: "", redirectTo: "home", pathMatch: "full" }
     ]),
     ProductModule,
-    UserModule   
+    UserModule,
+    ShoppingCartModule   
   ],
   providers: [],
   bootstrap: [AppComponent]
